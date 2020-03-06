@@ -1,5 +1,4 @@
 class Character
-    attr_reader :strength, :offence, :defense
     
     def initialize(**total)
         @name = total[:strength]
