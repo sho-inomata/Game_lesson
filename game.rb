@@ -1,26 +1,11 @@
-class Brave
-    attr_accessor :strength, :offence, :defense
-    
-    def initialize(**total)
-        @strength = total[:strength]
-        @offencee = total[:offence]
-        @defense = total[:defense]
-    end
+require './chara'
+
+class Brave < Character
 end
 
-class Monster
-    attr_accessor :strength, :offence, :defense
-
-    def initialize(**total)
-        @strength = total[:strength]
-        @offensive = total[:offence]
-        @defense = total[:defense]
-    end
+class Monster < Character
 end
 
-
-brave = Brave.new(strength:100, offence:50, defense:50)
-
-monster = Monster.new(strength:200, offence:100, defense:100)
-
+brave = Brave.new(strength: 300, offence:200, defense:100)
+monster = Monster.new(strength: 500, offence:300, defense:150)
 
