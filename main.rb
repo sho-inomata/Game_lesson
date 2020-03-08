@@ -1,8 +1,8 @@
 require './brave'
 require './monster'
+require './attack_control'
 
-brave = Brave.new(strength:300, offence:200, defense:100)
-monster = Monster.new(strength:500, offence:300, defense:150)
+brave = Brave.new(name: "勇者ショウ", hp:900, strength:300, offence:300, defense:100)
+monster = Monster.new(name: "スライム", hp:1000, strength:500, offence:400, defense:150)
 
-brave.brave_attack(monster)
-monster.monster_attack(brave)
+attack(monster: monster, brave: brave)
