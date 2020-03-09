@@ -1,3 +1,5 @@
+# require './attack_control'
+
 class Character
 
   attr_reader :name, :strength, :offence, :defense
@@ -10,4 +12,7 @@ class Character
     @offence = total[:offence]
     @defense = total[:defense]
   end 
+
+  
+
 end

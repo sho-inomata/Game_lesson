@@ -1,9 +1,11 @@
 require './brave'
 require './monster'
 
-def attack(**prams)
-  @brave = prams[:brave]
-  @monster = prams[:monster]
+
+
+def attack(**params)
+  @brave = params[:brave]
+  @monster = params[:monster]
 
   attack_loop
 
@@ -11,25 +13,12 @@ def attack(**prams)
   
 end
 
-private
 
-def damage(**params)
-
-  target = params[:target]
-  damage = params[:damage]
-
-  puts "#{target.name}の攻撃"
-  target_damage = target.offence - target.defense
-  target.hp -= target_damage
-  target.hp = 0 if target.hp <= 0
-  puts "#{damage.name}は#{target_damage}のダメージを受けた！！ 残りHPは#{target.hp}だ！！"
-  
-end
 
 def attack_loop
   loop do
-    number = rand(6)
-    if number <= 3
+    number = rand(3)
+    if number < 1 
       damage(target: @brave, damage: @monster)
     else
       damage(target: @monster, damage: @brave)
@@ -39,6 +28,8 @@ def attack_loop
     break if @monster.hp <= 0
   end
 end
+
+private
 
 def victory_Judg
   if @brave.hp > 0 
