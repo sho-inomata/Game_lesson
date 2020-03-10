@@ -1,8 +1,6 @@
 require './brave'
 require './monster'
 
-
-
 def attack(**params)
   @brave = params[:brave]
   @monster = params[:monster]
@@ -14,14 +12,13 @@ def attack(**params)
 end
 
 
-
 def attack_loop
   loop do
     number = rand(3)
     if number < 1 
-      damage(target: @brave, damage: @monster)
+      @brave.damage(target: @brave, damage: @monster)
     else
-      damage(target: @monster, damage: @brave)
+      @monster.damage(target: @monster, damage: @brave)
     end
   
     break if @brave.hp <= 0
